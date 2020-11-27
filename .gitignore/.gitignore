@@ -1,0 +1,63 @@
+#!/usr/bin/python3
+print("Content-type: text/html \n")
+import magicwand
+
+######## H O M E W O R K 2 ##########
+# Convert an english dictionary in python dictionary code.
+#
+# Create a dictionary to store words and meaning from an english dictionary.
+# Create a function to print all items alphabetically.
+# Create a function to search for a word and show it's meaning.
+###################
+import random
+############################## part 1: Create a dictionary to store words and meaning from an english dictionary.
+dictionary = {
+    "rancorous" : "Showing deep seated resentment.",
+    "ostentatious" : "Intended to attract notice and impress others.",
+    "frugal" : "Avoiding waste.",
+    "haughty" : "Having or showing arrogant superioity.",
+    "amicable" : "Characterized by friendship and good will.",
+    "disdain" : "Lack of respect accompanied by a feeling of intense dislike.",
+    "evanescent" : "Tending to vanish like vapor.",
+    "lobbyist" : "Someone who is employed to persuade how legislators vote.",
+    "mundane" : "Found in the ordinary course of events.",
+    "nonchalant" : "Marked by casual unconcern or indifference.",
+    "procrastinate" : "Postpone doing what one should be doing.",
+    "vinicate" : "Show to be right by provviding justification or proof.",
+    "venerable" : "Profoundly honored."
+    
+    # I choose these words randomly from vocabulary.com "100 Top SAT Words" list 
+}
+############################# part 2: Create a function to print all items alphabetically.
+def alphabetcally():
+    alphabetically_sorted_dictionary = sorted(dictionary.items())
+    print(f"""These are the following words in the dictionary:""")
+    display_number = 0
+    for key in sorted(dictionary):
+        display_number += 1
+        print(f"""{display_number}. {key}""")
+    print()
+    return alphabetically_sorted_dictionary
+test = alphabetcally()
+
+############################# part 3: Create a function to search for a word and show it's meaning.
+def display(word):
+    if word in dictionary:
+        print(dictionary[word])
+    else:
+        print("Sorry, that word isn't in my dictionary.")
+        
+#display("rancorous")
+#display("marvoulus")
+
+def random_def():
+    number = len(dictionary.items()) - 1
+    random_number = random.randint(0,number)                             
+    #print(random_number)
+    dict_list = list(dictionary.keys())
+    #print(dict_list)
+    print(f"""{dict_list[random_number].capitalize()}: """)
+    display(dict_list[random_number])
+
+random_def()
+
